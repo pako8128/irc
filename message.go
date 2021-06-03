@@ -32,7 +32,7 @@ func (m *Message) User() string {
 	}
 	bang := strings.IndexByte(m.Prefix[:at], '!')
 	if bang == -1 {
-		return ""
+		return m.Prefix[:at]
 	}
 	return m.Prefix[bang+1 : at]
 }
